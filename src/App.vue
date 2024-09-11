@@ -59,8 +59,8 @@ const rotateGlobeToPosition3 = () => {
 }
 
 .globe-container {
-  width: 400px;
-  height: 400px;
+  width: 800px;
+  height: 800px;
 }
 
 .panels {

@@ -41,7 +41,7 @@ const initGlobe = () => {
   // Animation loop
   const animate = () => {
     requestAnimationFrame(animate);
-    globe.rotation.y += rotate_offset; // Rotate globe
+    globe.rotation.y += rotate_offset;
     renderer.render(scene, camera);
   };
   animate();
@@ -62,24 +62,49 @@ const initGlobe = () => {
   });
 };
 
-const rotateToPosition1 = () => {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function rotateToPosition1() {
   if (globe) {
     rotate_offset = 0;
-    globe.rotation.set(Math.PI * (1/7), 0, 0); // Rotation position 1 (default front view)
+    let dx = (Math.PI * (1/7) - globe.rotation.x) / 100;
+    let dy = (-globe.rotation.y) / 100;
+    let dz = (-globe.rotation.z) / 100;
+
+    for (let i = 0; i < 100; i++) {
+      await sleep(5);
+      globe.rotation.set(globe.rotation.x + dx, globe.rotation.y + dy, globe.rotation.z + dz);
+    }
   }
 };
 
-const rotateToPosition2 = () => {
+async function rotateToPosition2() {
   if (globe) {
     rotate_offset = 0;
-    globe.rotation.set(Math.PI * (1/7), Math.PI * (6/7), 0); // Rotation position 2 (tilted)
+    let dx = (Math.PI * (1/7) - globe.rotation.x) / 100;
+    let dy = (Math.PI * (6/7) - globe.rotation.y) / 100;
+    let dz = (-globe.rotation.z) / 100;
+
+    for (let i = 0; i < 100; i++) {
+      await sleep(5);
+      globe.rotation.set(globe.rotation.x + dx, globe.rotation.y + dy, globe.rotation.z + dz);
+    }
   }
 };
 
-const rotateToPosition3 = () => {
+async function rotateToPosition3() {
   if (globe) {
     rotate_offset = 0;
-    globe.rotation.set(Math.PI * (1/14), Math.PI * (10/7), 0); // Rotation position 3 (back view)
+    let dx = (Math.PI * (1/14) - globe.rotation.x) / 100;
+    let dy = (Math.PI * (10/7) -globe.rotation.y) / 100;
+    let dz = (-globe.rotation.z) / 100;
+
+    for (let i = 0; i < 100; i++) {
+      await sleep(5);
+      globe.rotation.set(globe.rotation.x + dx, globe.rotation.y + dy, globe.rotation.z + dz);
+    }
   }
 };
 
@@ -97,11 +122,11 @@ onMounted(() => {
 <style scoped>
 .globe-container {
   position: absolute;
-  left: 0%; /* 25% from the left side of the screen */
-  top: 30%; /* Center vertically */
+  left: 2%; /* 25% from the left side of the screen */
+  top: 45%; /* Center vertically */
   transform: translateY(-50%);
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
 }
 
 .globe-box {
