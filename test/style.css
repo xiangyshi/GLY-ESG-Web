@@ -1,0 +1,21 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .parallax {
+    background-image: url('image.gif');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .content {
+    height: 1000px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+  }
+  
