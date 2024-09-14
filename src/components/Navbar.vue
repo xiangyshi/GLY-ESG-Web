@@ -109,6 +109,7 @@ const toggleSubmenu = (value) => {
 <style scoped>
 .Navbar {
   background-color: #1e1f31;
+  padding-right: 20px;
 }
 
 ul {
@@ -122,6 +123,7 @@ ul {
 
 li {
   margin: 0;
+  padding: 0;
   position: relative;
 }
 
@@ -180,7 +182,7 @@ li a:hover {
 .dropdown-content-2 {
   display:block;
   position: relative;
-  background-color: #2e2b42;
+  background-color: #5d5783;
   min-width: 160px;
   top: 100%;
   /* Place the submenu just below the parent */
