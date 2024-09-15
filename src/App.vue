@@ -89,7 +89,6 @@ const redirectTo = (url) => {
   display: flex;
   flex-direction: column;
   height: 200vh;
-  height: 200vh;
 }
 
 .gradient-background {
@@ -105,13 +104,8 @@ const redirectTo = (url) => {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  justify-content: space-between;
-  flex-direction: row;
   width: 100%;
   height: 100%;
-  gap: 50px;
-  padding: 0 15%;
-  position: absolute;
   gap: 50px;
   padding: 0 15%;
   position: absolute;
