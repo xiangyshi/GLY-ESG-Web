@@ -15,7 +15,6 @@
       <img src="./components/Mountain.png" style="width: 100%; height: 100%; position: absolute;">
       
       <div class="content">
-        <!-- 左侧的三个按钮 -->
         <div class="button-container">
           <div v-for="(button, index) in buttons" :key="index" class="button-wrap">
             <button @mouseover="handleMouseEnter(index)" @mouseout="handleMouseLeave(index)"
@@ -23,7 +22,6 @@
             @click="redirectTo(button.link)">
               {{ button.text }}
             </button>
-            <!-- 画卷内容 -->
             <div v-show="activeButton === index" class="expand-content">
               <div class="chart" style="background-color: red;">HQ Global Region</div>
               <div class="chart" style="background-color: blue;">Asia-Pacific</div>
@@ -32,7 +30,6 @@
           </div>
         </div>
 
-        <!-- 右侧的文字 -->
         <div v-show="!expandContent" class="text-container">
           <p style="color: white; font-size: 60px;">SDG</p>
           <p style="color: white; font-size: 36px;">Visual make a Better World.</p>
@@ -95,11 +92,11 @@ const redirectTo = (url) => {
 }
 
 .gradient-background {
-  flex: 1; /* Adjusted to take up available space */
-  background: linear-gradient(to left, #000000, #000751); /* Gradient colors */
+  flex: 1;
+  background: linear-gradient(to left, #000000, #000751);
   display: flex;
   align-items: center;
-  justify-content: center; /* Center content horizontally and vertically */
+  justify-content: center;
 }
 
 .content {
@@ -120,33 +117,33 @@ const redirectTo = (url) => {
 }
 
 .panels {
-  margin-top: 230px; /* Spacing above buttons */
+  margin-top: 230px;
 }
 
 .expand-button {
   transition: transform 0.3s ease;
-  margin: 3vh 0; /* 按钮间距增大 */
-  font-size: 20px; /* 增大按钮大小 */
-  width: 30vw;  /* 宽度为视口宽度的 10% */
-  height: 15vh;  /* 高度为视口高度的 5% */
+  margin: 3vh 0;
+  font-size: 20px;
+  width: 30vw;
+  height: 15vh;
   background-color: white;
   border: none;
 }
 
 .expand-button.active {
-  transform: scale(1.2); /* 横向放大1.2倍，纵向保持原样 */
-  height: 250px; /* 纵向拉长到150px（可以调整为你需要的值） */
+  transform: scale(1.2);
+  height: 250px;
 }
 
 .expand-button.other {
-  transform: scale(0.8); /* 非悬停按钮缩小 */
+  transform: scale(0.8);
 }
 
 .button-container {
   display: flex;
-  flex-direction: column; /* 纵向排列按钮 */
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* 让按钮靠左对齐 */
+  align-items: flex-start;
   height: 100%;
   position: absolute;
   padding-right: 25%;
@@ -157,7 +154,7 @@ const redirectTo = (url) => {
 }
 
 .text-container {
-  margin-left: 30px; /* 文字距按钮有一定间距 */
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,7 +164,7 @@ const redirectTo = (url) => {
 .expand-content {
   transition: width 0.5s ease;
   position: absolute;
-  left: 100%; /* 画卷展开位置在按钮的右侧 */
+  left: 100%;
   top: 50%;
   transform: translateY(-50%);
   height: 300px;
@@ -176,14 +173,14 @@ const redirectTo = (url) => {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 600px; /* 固定展开宽度 */
-  pointer-events: none; /* 禁用鼠标事件，防止干扰悬停 */
+  width: 600px;
+  pointer-events: none;
 }
 
 .chart {
-  width: 150px; /* 放大饼图大小 */
+  width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: 5px 0; /* 调整饼图之间的间距 */
+  margin: 5px 0;
 }
 </style>
