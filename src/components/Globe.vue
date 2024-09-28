@@ -1,7 +1,5 @@
 <template>
-  <div class="globe-container">
-    <div ref="globeBox" class="globe-box"></div>
-  </div>
+  <div ref="globeBox" class="globe-box"></div>
 </template>
 
 <script setup>
@@ -48,8 +46,8 @@ const initGlobe = () => {
 
   // Handle resizing
   const onWindowResize = () => {
-    const width = 300;
-    const height = 300;
+    const width = 800;
+    const height = 800;
     renderer.setSize(width, height);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
@@ -120,17 +118,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.globe-container {
-  position: absolute;
-  left: 2%; /* 25% from the left side of the screen */
-  top: 45%; /* Center vertically */
-  transform: translateY(-50%);
-  width: 600px;
-  height: 600px;
-}
-
-.globe-box {
-  width: 100%;
-  height: 100%;
-}
+  .globe-box{
+    width: 600px;
+    height: 600px;
+  }
 </style>

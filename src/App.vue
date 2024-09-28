@@ -1,60 +1,3 @@
-<template>
-  <div class="app-container">
-    <Navbar />
-    <!-- BEGIN GLOBE PAGE -->
-    <div class="gradient-background">
-      <ArcCanvas class="arc"/>
-      <div class="content">
-        <div class="globe-and-tags">
-          <!-- Globe Component -->
-          <Globe ref="globeComponent" />
-          <!-- Buttons for rotating the globe -->
-          <div class="tags">
-            <ul>
-              <li><button @click="rotateGlobeToPosition1"><h1> About Our Partnership </h1></button></li>
-              <li><button class="indent" @click="rotateGlobeToPosition2"><h1> Meet Our Partnership </h1></button></li>
-              <li><button @click="rotateGlobeToPosition3"><h1> Join Our Partnership </h1></button></li>
-            </ul>
-          </div>
-        </div>
-        <!-- Text box for displaying hovered text -->
-        <div class="text-box">
-          {{ hoveredText }}
-        </div>
-      </div>
-    </div>
-    <!-- END GLOBE PAGE-->
-
-    <!-- BEGIN MOUNTAIN PAGE -->
-    <div style="flex: 1; position: relative;">
-      <img src="./components/Mountain.png" style="width: 100%; height: 100%; position: absolute;">
-      
-      <div class="content">
-        <div class="button-container">
-          <div v-for="(button, index) in buttons" :key="index" class="button-wrap">
-            <button @mouseover="handleMouseEnter(index)" @mouseout="handleMouseLeave(index)"
-            :class="['expand-button', { active: activeButton === index, other: activeButton !== null && activeButton !== index }]"
-            @click="redirectTo(button.link)">
-              {{ button.text }}
-            </button>
-            <div v-show="activeButton === index" class="expand-content">
-              <div class="chart" style="background-color: red;">HQ Global Region</div>
-              <div class="chart" style="background-color: blue;">Asia-Pacific</div>
-              <div class="chart" style="background-color: green;">China</div>
-            </div>
-          </div>
-        </div>
-
-        <div v-show="!expandContent" class="text-container">
-          <p style="color: white; font-size: 60px; text-align: center;">SDG</p>
-          <p style="color: white; font-size: 36px;">Visual make a Better World.</p>
-        </div>
-      </div>
-    </div>
-    <!-- END MOUNTAIN PAGE -->
-  </div>
-</template>
-
 <script setup>
 import Navbar from './components/Navbar.vue';
 import Globe from './components/Globe.vue';
@@ -113,7 +56,73 @@ const redirectTo = (url) => {
 };
 </script>
 
+<template>
+  <div class="app-container">
+    <Navbar />
+    <!-- BEGIN GLOBE PAGE -->
+    <div class="globe-background" style="flex: 1; position: relative;">
+      <img src="./assets/stars.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <div class="globe-page">
+        <!-- Globe Box-->
+        <div class="flex-globe">
+          <Globe ref="globeComponent" />
+        </div>
+        <!-- Arc Box-->
+        <div class="flex-arc">
+          <ArcCanvas class="arc"/>
+        </div>
+        <!-- Partnership Labels -->
+        <div class="flex-label">
+          <div class="flex-label-container">
+            <button class="shrink" @click="rotateGlobeToPosition1"><h1> About Our Partnership </h1></button>
+            <button class="indent" @click="rotateGlobeToPosition2"><h1> Meet Our Partnership </h1></button>
+            <button class="shrink" @click="rotateGlobeToPosition3"><h1> Join Our Partnership </h1></button>
+          </div>
+        </div>
+        <!-- Partnership Text Box-->
+        <div class="flex-text">
+          <div class="text-box">
+            {{ hoveredText }}
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+    <!-- END GLOBE PAGE-->
+
+    <!-- BEGIN MOUNTAIN PAGE -->
+    <div style="flex: 1; position: relative;">
+      <img src="./assets/Mountain.png" style="width: 100%; height: 100%; position: absolute;">
+      
+      <div class="mountain-page">
+        <div class="button-container">
+          <div v-for="(button, index) in buttons" :key="index" class="button-wrap">
+            <button @mouseover="handleMouseEnter(index)" @mouseout="handleMouseLeave(index)"
+            :class="['expand-button', { active: activeButton === index, other: activeButton !== null && activeButton !== index }]"
+            @click="redirectTo(button.link)">
+              {{ button.text }}
+            </button>
+            <div v-show="activeButton === index" class="expand-content">
+              <div class="chart" style="background-color: red;">HQ Global Region</div>
+              <div class="chart" style="background-color: blue;">Asia-Pacific</div>
+              <div class="chart" style="background-color: green;">China</div>
+            </div>
+          </div>
+        </div>
+
+        <div v-show="!expandContent" class="text-container">
+          <p style="color: white; font-size: 60px; text-align: center;">SDG</p>
+          <p style="color: white; font-size: 36px;">Visual make a Better World.</p>
+        </div>
+      </div>
+    </div>
+    <!-- END MOUNTAIN PAGE -->
+  </div>
+</template>
+
 <style>
+/* Entire Page Styling */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -121,87 +130,80 @@ const redirectTo = (url) => {
 }
 
 /* Globe Page Styling */
-
-.gradient-background {
-  flex: 1;
-  background-image: url("assets/stars.jpg"); /* Gradient background */
+.globe-background {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
-.content {
+.globe-page {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space between the globe and the text box */
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.globe-and-tags {
-  display: flex;
-  flex-direction: column; /* Stack globe and tags vertically */
-  align-items: center;
-}
-
-.globe-container {
-  width: 400px;
-  height: 400px;
-}
-
-.tags {
-  margin-top: 40px;
-}
-
-.tags ul {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-
-.tags button {
-  background-color: rgb(0, 17, 88);
-  color: #ffffff;
-  padding: 15px;
-  border: none;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 15px;
-  font-size: 16px;
-  margin-left: 200%;
-  margin-bottom: 50px;
   z-index: 1;
 }
 
-.tags .indent {
-  margin-left: 215%;
+.flex-globe {
+  width: 800px;
+  height: 800px;
 }
 
-.tags button:hover {
-  background: linear-gradient(to left, #000528, #000540);
+.flex-arc {
+  position: absolute;
+  padding-left: 30%;
+  max-width: 300px;
+  flex-grow: 0.5;
+}
+
+.flex-label {
+  position: absolute;
+  height: 100%;
+  padding-left: 40%;
+  max-width: 300px;
+  flex-grow: 0.5;
+}
+
+.flex-label-container{
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.flex-text {
+  z-index: 1;
+  margin-left: 25%;
+  height: 40%;
+  min-width: 400px;
+  min-height: 400px;
 }
 
 .text-box {
-  background-color: rgba(0, 2, 129, 0.8);
-  color: white;
-  padding: 20px;
-  width: 700px; /* Adjust width as needed */
-  height: 560px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.shrink {
+  position: relative;
   margin-right: 40px;
 }
 
-.arc {
-  position: absolute;
+.indent {
+  position: relative;
+  margin-left: 40px;
 }
 
 /* Mountain Page Styling */
-
+.mountain-page {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
 .expand-button {
   transition: transform 0.3s ease;
   margin: 3vh 0;

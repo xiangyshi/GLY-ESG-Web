@@ -1,6 +1,6 @@
 <template>
     <div class="canvas-container">
-      <canvas ref="canvas" width="700" height="700"></canvas>
+      <canvas ref="canvas" width="500" height="700"></canvas>
     </div>
   </template>
   
