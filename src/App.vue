@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <Navbar />
+    <!-- BEGIN GLOBE PAGE -->
     <div class="gradient-background">
       <ArcCanvas class="arc"/>
       <div class="content">
@@ -22,6 +23,9 @@
         </div>
       </div>
     </div>
+    <!-- END GLOBE PAGE-->
+
+    <!-- BEGIN MOUNTAIN PAGE -->
     <div style="flex: 1; position: relative;">
       <img src="./components/Mountain.png" style="width: 100%; height: 100%; position: absolute;">
       
@@ -42,11 +46,12 @@
         </div>
 
         <div v-show="!expandContent" class="text-container">
-          <p style="color: white; font-size: 60px;">SDG</p>
+          <p style="color: white; font-size: 60px; text-align: center;">SDG</p>
           <p style="color: white; font-size: 36px;">Visual make a Better World.</p>
         </div>
       </div>
     </div>
+    <!-- END MOUNTAIN PAGE -->
   </div>
 </template>
 
@@ -114,6 +119,8 @@ const redirectTo = (url) => {
   flex-direction: column;
   height: 200vh;
 }
+
+/* Globe Page Styling */
 
 .gradient-background {
   flex: 1;
@@ -193,6 +200,8 @@ const redirectTo = (url) => {
   position: absolute;
 }
 
+/* Mountain Page Styling */
+
 .expand-button {
   transition: transform 0.3s ease;
   margin: 3vh 0;
@@ -220,6 +229,8 @@ const redirectTo = (url) => {
   height: 100%;
   position: absolute;
   padding-right: 25%;
+  margin-left: 20%;
+  z-index: 2;
 }
 
 .button-wrap {
@@ -227,11 +238,13 @@ const redirectTo = (url) => {
 }
 
 .text-container {
+  position: relative;
   margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 40%;
+  padding-left: 60%;
+  z-index: 1;
 }
 
 .expand-content {
