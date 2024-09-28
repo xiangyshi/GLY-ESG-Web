@@ -47,31 +47,6 @@
         </div>
       </div>
     </div>
-    <div style="flex: 1; position: relative;">
-      <img src="./components/Mountain.png" style="width: 100%; height: 100%; position: absolute;">
-      
-      <div class="content">
-        <div class="button-container">
-          <div v-for="(button, index) in buttons" :key="index" class="button-wrap">
-            <button @mouseover="handleMouseEnter(index)" @mouseout="handleMouseLeave(index)"
-            :class="['expand-button', { active: activeButton === index, other: activeButton !== null && activeButton !== index }]"
-            @click="redirectTo(button.link)">
-              {{ button.text }}
-            </button>
-            <div v-show="activeButton === index" class="expand-content">
-              <div class="chart" style="background-color: red;">HQ Global Region</div>
-              <div class="chart" style="background-color: blue;">Asia-Pacific</div>
-              <div class="chart" style="background-color: green;">China</div>
-            </div>
-          </div>
-        </div>
-
-        <div v-show="!expandContent" class="text-container">
-          <p style="color: white; font-size: 60px;">SDG</p>
-          <p style="color: white; font-size: 36px;">Visual make a Better World.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -108,32 +83,7 @@ const clearText = () => {
 };
 
 const buttons = ref([
-{ text: 'Food and Agriculture', link: 'https://example.com' },
-  { text: 'Digital Inclusion', link: 'https://example.com' },
-  { text: 'Financial System', link: 'https://example.com' }
-]);
-
-const activeButton = ref(null);
-const expandContent = ref(false);
-
-const handleMouseEnter = (index) => {
-  activeButton.value = index;
-  expandContent.value = true;
-};
-
-const handleMouseLeave = (index) => {
-  if (activeButton.value === index) {
-    activeButton.value = null;
-    expandContent.value = false;
-  }
-};
-
-const redirectTo = (url) => {
-  window.location.href = url;
-};
-
-const buttons = ref([
-{ text: 'Food and Agriculture', link: 'https://example.com' },
+  { text: 'Food and Agriculture', link: 'https://example.com' },
   { text: 'Digital Inclusion', link: 'https://example.com' },
   { text: 'Financial System', link: 'https://example.com' }
 ]);
