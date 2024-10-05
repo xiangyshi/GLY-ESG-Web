@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "plotly.js": "^2.35.2",
     "three": "^0.168.0",
     "vue": "^3.4.29",
     "vue-router": "^4.4.5"
