@@ -97,8 +97,8 @@ const handleAvatarClick = (alumnus) => {
 .guided-area-frame {
   border: 2px solid #000; /* Frame border */
   border-radius: 5px; /* Rounded corners for the frame */
-  width: 80%; /* Set width to a smaller portion of the page */
-  max-height: 60vh;
+  width: 100%; /* Set width to a smaller portion of the page */
+  height: 100%;
   margin: 20px auto; /* Center the frame horizontally */
   background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
   overflow: hidden;
@@ -108,6 +108,7 @@ const handleAvatarClick = (alumnus) => {
 .guided-area {
   position: relative; /* Relative to ensure it's layered over the background */
   z-index: 1; /* Make sure this content is above the background */
+  height: 100%;
 }
 
 .divider {
@@ -117,11 +118,13 @@ const handleAvatarClick = (alumnus) => {
 
 .area-content {
   display: flex;
+  height: 100%;
 }
 
 .left-area {
   flex: 1; /* Takes 1/6 of the space */
   border-right: 2px solid #000; /* Optional divider */
+  height: 100%;
 }
 
 .row {
@@ -133,7 +136,7 @@ const handleAvatarClick = (alumnus) => {
   flex: 5; /* Takes 5/6 of the space */
   padding: 10px;
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: 100vh;
 }
 
 .outstanding-alumni {
