@@ -72,7 +72,8 @@ const toggleSubmenu = (value) => {
 		<!-- Submenu -->
 		<ul v-if="showSubmenu" class="dropdown-content">
 		  <li>
-			<a href="#">Team</a>
+      <router-link to="/alum">Alumni</router-link>
+			<!-- <a href="#">Team</a> -->
 			<ul class="dropdown-content-2">
 			  <li><a href="#">Full-time</a></li>
 			  <li><a href="#">Youth Research</a></li>
