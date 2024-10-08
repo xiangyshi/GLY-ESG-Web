@@ -8,8 +8,8 @@
   <div class="data-container">
     <img src="../assets/data.jpeg" style="width: 100%; height: 100%; position: absolute;">
     <div class="data-flex-box">
-      <div class="title" style="text-align: center; min-width: 100%; max-height: 80px;">
-        <h1 style="color: white;"> Data Dashboard </h1>
+      <div class="data-flex-row title" style="text-align: center; min-width: 100%; max-height: 80px;">
+        <h1 style="color: white; font-size: 70px; font-weight: bolder; padding-bottom: 30px;"> Data Dashboard </h1>
       </div>
       <div class="data-flex-row"> 
         <div class="card visit">
@@ -33,7 +33,9 @@
       </div>
       <div class="data-flex-row">
         <div class="card plot">
-          <Plot />
+          <div class="card-info" style="font-size:100px">
+            {Plot goes here}
+          </div>
         </div>
       </div>
     </div>
@@ -73,7 +75,10 @@
   height: 90%;
   min-width: 300px;
   border: 2px solid white;
-  justify-content: center; 
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .card-info{
