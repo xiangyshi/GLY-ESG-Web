@@ -1,13 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue'; // Adjust the path as necessary
-
+import HomeView from '@/views/HomeView.vue'; 
+import DataView from '@/views/DataView.vue';
 const routes = [
   {
-    path: '/',           // Default route
+    path: '/',        
     name: 'Home',
-    component: HomeView, // The HomeView component to load for this route
+    component: HomeView,
   },
-  // You can add more routes here as needed
+  {
+    path: '/data',
+    name: "Data",
+    component: DataView,
+  }
 ];
 
 const router = createRouter({

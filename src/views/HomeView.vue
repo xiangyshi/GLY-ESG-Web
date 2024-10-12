@@ -1,108 +1,108 @@
 <script setup>
-import Navbar from '../components/Navbar.vue';
-import Globe from '../components/Globe.vue';
-import ArcCanvas from '../components/ArcCanvas.vue';
-import { ref, computed } from 'vue';
+  import Navbar from '../components/Navbar.vue';
+  import Globe from '../components/Globe.vue';
+  import ArcCanvas from '../components/ArcCanvas.vue';
+  import { ref, computed } from 'vue';
 
-const globeComponent = ref(null);
-const hoveredText = ref('');
-const title = ref('');
+  const globeComponent = ref(null);
+  const hoveredText = ref('');
+  const title = ref('');
 
-const rotateGlobeToPosition1 = () => {
-  globeComponent.value.rotateToPosition1();
-  setText("Panel 1");
-  setTitle(titles.value[0].text);
-};
+  const rotateGlobeToPosition1 = () => {
+    globeComponent.value.rotateToPosition1();
+    setText("Panel 1");
+    setTitle(titles.value[0].text);
+  };
 
-const rotateGlobeToPosition2 = () => {
-  globeComponent.value.rotateToPosition2();
-  setText("Panel 2");
-  setTitle(titles.value[1].text);
-};
+  const rotateGlobeToPosition2 = () => {
+    globeComponent.value.rotateToPosition2();
+    setText("Panel 2");
+    setTitle(titles.value[1].text);
+  };
 
-const rotateGlobeToPosition3 = () => {
-  globeComponent.value.rotateToPosition3();
-  setText("Panel 3");
-  setTitle(titles.value[2].text);
-};
+  const rotateGlobeToPosition3 = () => {
+    globeComponent.value.rotateToPosition3();
+    setText("Panel 3");
+    setTitle(titles.value[2].text);
+  };
 
-const setText = (text) => {
-  hoveredText.value = text;
-};
+  const setText = (text) => {
+    hoveredText.value = text;
+  };
 
-const setTitle = (text) => {
-  title.value = text;
-}
-
-const titles = ref([
-  { text: 'About Our Partnership'},
-  { text: 'Meet Our Partnership'},
-  { text: 'Join Our Partnership'},
-])
-
-const typeVisible = ref(false);
-const hqVisible = ref(false);
-
-const showTypeOptions = () => {
-  typeVisible.value = true;
-};
-
-const hideTypeOptions = () => {
-  typeVisible.value = false;
-};
-
-const showHQOptions = () => {
-  hqVisible.value = true;
-};
-
-const hideHQOptions = () => {
-  hqVisible.value = false;
-};
-
-const items = ref([
-  { name: 'Company A', type: 'Private', hq: 'China', website: 'www.companya.com' },
-  { name: 'Company B', type: 'NGO', hq: 'Hongkong China', website: 'www.companyb.com' },
-  { name: 'Company C', type: 'Academia', hq: 'USA', website: 'www.companyc.com' },
-]);
-
-const typeOptions = ['All', 'Private', 'Academia', 'NGO', 'IGO'];
-const hqOptions = ['All', 'China', 'Hongkong China'];
-
-const selectedTypes = ref(['All']);
-const selectedHQ = ref(['All']);
-
-const filteredItems = computed(() => {
-  return items.value.filter(item => {
-    const typeMatch = selectedTypes.value.includes('All') || selectedTypes.value.includes(item.type);
-    const hqMatch = selectedHQ.value.includes('All') || selectedHQ.value.includes(item.hq);
-    return typeMatch && hqMatch;
-  });
-});
-
-const buttons = ref([
-  { text: 'Food and Agriculture', link: 'https://example.com' },
-  { text: 'Digital Inclusion', link: 'https://example.com' },
-  { text: 'Financial System', link: 'https://example.com' }
-]);
-
-const activeButton = ref(null);
-const expandContent = ref(false);
-
-const handleMouseEnter = (index) => {
-  activeButton.value = index;
-  expandContent.value = true;
-};
-
-const handleMouseLeave = (index) => {
-  if (activeButton.value === index) {
-    activeButton.value = null;
-    expandContent.value = false;
+  const setTitle = (text) => {
+    title.value = text;
   }
-};
 
-const redirectTo = (url) => {
-  window.location.href = url;
-};
+  const titles = ref([
+    { text: 'About Our Partnership'},
+    { text: 'Meet Our Partnership'},
+    { text: 'Join Our Partnership'},
+  ])
+
+  const typeVisible = ref(false);
+  const hqVisible = ref(false);
+
+  const showTypeOptions = () => {
+    typeVisible.value = true;
+  };
+
+  const hideTypeOptions = () => {
+    typeVisible.value = false;
+  };
+
+  const showHQOptions = () => {
+    hqVisible.value = true;
+  };
+
+  const hideHQOptions = () => {
+    hqVisible.value = false;
+  };
+
+  const items = ref([
+    { name: 'Company A', type: 'Private', hq: 'China', website: 'www.companya.com' },
+    { name: 'Company B', type: 'NGO', hq: 'Hongkong China', website: 'www.companyb.com' },
+    { name: 'Company C', type: 'Academia', hq: 'USA', website: 'www.companyc.com' },
+  ]);
+
+  const typeOptions = ['All', 'Private', 'Academia', 'NGO', 'IGO'];
+  const hqOptions = ['All', 'China', 'Hongkong China'];
+
+  const selectedTypes = ref(['All']);
+  const selectedHQ = ref(['All']);
+
+  const filteredItems = computed(() => {
+    return items.value.filter(item => {
+      const typeMatch = selectedTypes.value.includes('All') || selectedTypes.value.includes(item.type);
+      const hqMatch = selectedHQ.value.includes('All') || selectedHQ.value.includes(item.hq);
+      return typeMatch && hqMatch;
+    });
+  });
+
+  const buttons = ref([
+    { text: 'Food and Agriculture', link: 'https://example.com' },
+    { text: 'Digital Inclusion', link: 'https://example.com' },
+    { text: 'Financial System', link: 'https://example.com' }
+  ]);
+
+  const activeButton = ref(null);
+  const expandContent = ref(false);
+
+  const handleMouseEnter = (index) => {
+    activeButton.value = index;
+    expandContent.value = true;
+  };
+
+  const handleMouseLeave = (index) => {
+    if (activeButton.value === index) {
+      activeButton.value = null;
+      expandContent.value = false;
+    }
+  };
+
+  const redirectTo = (url) => {
+    window.location.href = url;
+  };
 </script>
 
 <template>
