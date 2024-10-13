@@ -1,6 +1,5 @@
 <script setup>
   import Navbar from '../components/Navbar.vue';
-  import Plot from '../components/Plot.vue';
 </script>
 
 <template>
