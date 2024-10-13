@@ -109,8 +109,8 @@ const toggleSubmenu = (value) => {
 
 <style scoped>
 .Navbar {
+  display: fixed;
   background-color: #1e1f31;
-  padding-right: 20px;
 }
 
 ul {

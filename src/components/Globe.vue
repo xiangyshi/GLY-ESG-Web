@@ -119,7 +119,7 @@ onMounted(() => {
 
 <style scoped>
   .globe-box{
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
   }
 </style>

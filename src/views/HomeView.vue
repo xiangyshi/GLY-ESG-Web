@@ -252,7 +252,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 /* Entire Page Styling */
 .app-container {
   display: flex;

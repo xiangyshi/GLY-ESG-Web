@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue'; 
 import DataView from '@/views/DataView.vue';
 import AlumView from '@/views/AlumView.vue';
+import HomeViewClean from '@/views/HomeViewClean.vue';
+
 const routes = [
   {
     path: '/',        
@@ -12,6 +14,11 @@ const routes = [
     path: '/data',
     name: "Data",
     component: DataView,
+  },
+  {
+    path: '/clean',
+    name: 'clean',
+    component: HomeViewClean,
   },
   {
     path: '/alum',
