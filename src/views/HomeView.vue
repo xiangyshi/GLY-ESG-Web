@@ -80,7 +80,7 @@ const filteredItems = computed(() => {
 });
 
 const buttons = ref([
-  { text: 'Food and Agriculture', link: 'https://example.com' },
+  { text: 'Food and Agriculture', link: '/agriculture' },
   { text: 'Digital Inclusion', link: 'https://example.com' },
   { text: 'Financial System', link: 'https://example.com' }
 ]);
@@ -110,7 +110,7 @@ const redirectTo = (url) => {
     <Navbar />
     <!-- BEGIN GLOBE PAGE -->
     <div class="globe-background" style="flex: 1; position: relative;">
-      <img src="../assets/stars.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="globe-page">
         <!-- Globe Box-->
         <div class="flex-globe">
@@ -257,7 +257,7 @@ const redirectTo = (url) => {
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  height: calc(200vh + 122.5px);
 }
 
 /* Globe Page Styling */

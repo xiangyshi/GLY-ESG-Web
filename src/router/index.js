@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue'; // Adjust the path as necessary
 import AlumView from '@/views/AlumView.vue';
+import AgricultureView from "@/views/AgricultureView.vue";
 
 const routes = [
   {
@@ -13,7 +14,11 @@ const routes = [
     name: 'Alum',
     component: AlumView,
   },
-  // You can add more routes here as needed
+  {
+    path: '/agriculture',
+    name: 'Agriculture',
+    component: AgricultureView,
+  }
 ];
 
 const router = createRouter({
