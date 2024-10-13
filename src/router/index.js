@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue'; // Adjust the path as necessary
+import HomeView from '@/views/HomeView.vue'; 
+import DataView from '@/views/DataView.vue';
 import AlumView from '@/views/AlumView.vue';
 import AgricultureView from "@/views/AgricultureView.vue";
 
 const routes = [
   {
-    path: '/',           // Default route
+    path: '/',        
     name: 'Home',
-    component: HomeView, // The HomeView component to load for this route
+    component: HomeView,
+  },
+  {
+    path: '/data',
+    name: "Data",
+    component: DataView,
   },
   {
     path: '/alum',
