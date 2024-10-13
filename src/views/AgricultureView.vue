@@ -96,10 +96,10 @@ onMounted(() => {
     <div class="image-container third-image">
       <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="third-title" :class="{ 'fade-in': showThirdImageText }">
-        Final Conclusion<br>and Insights
+        How do youth promote<br>corporate behavior change?
       </div>
       <div class="third-text" :class="{ 'fade-in': showThirdImageText }">
-        More text explaining the final conclusion and insights related to the stars.
+        Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
       </div>
     </div>
 
