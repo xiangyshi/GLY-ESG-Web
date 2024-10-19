@@ -81,8 +81,8 @@ const filteredItems = computed(() => {
 
 const buttons = ref([
   { text: 'Food and Agriculture', link: '/agriculture' },
-  { text: 'Digital Inclusion', link: 'https://example.com' },
-  { text: 'Financial System', link: 'https://example.com' }
+  { text: 'Digital Inclusion', link: '/digital' },
+  { text: 'Financial System', link: '/financial' }
 ]);
 
 const activeButton = ref(null);
