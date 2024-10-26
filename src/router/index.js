@@ -5,6 +5,7 @@ import AlumView from '@/views/AlumView.vue';
 import AgricultureView from "@/views/AgricultureView.vue";
 import DigitalView from "@/views/DigitalView.vue";
 import FinancialView from "@/views/FinancialView.vue";
+import ComparisonView from "@/views/ComparisonView.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/financial',
     name: 'Financial',
     component: FinancialView,
+  },
+  {
+    path: '/comparison',
+    name: 'Comparison',
+    component: ComparisonView,
   }
 ];
 

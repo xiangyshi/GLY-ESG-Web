@@ -71,7 +71,7 @@ onMounted(() => {
     <Navbar />
 
     <!-- First Image -->
-    <div class="image-container first-image">
+    <div class="agriculture-image-container first-image">
       <img src="../assets/Agriculture.png" style="width: 100%; height: 100%; position: absolute;">
       <div class="centered-text">
         Food and Agriculture
@@ -82,7 +82,7 @@ onMounted(() => {
     </div>
 
     <!-- Second Image -->
-    <div class="image-container second-image">
+    <div class="agriculture-image-container second-image">
       <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="second-title" :class="{ 'fade-in': showSecondImageText }">
         Project Introduction
@@ -93,7 +93,7 @@ onMounted(() => {
     </div>
 
     <!-- Third Image -->
-    <div class="image-container third-image">
+    <div class="agriculture-image-container third-image">
       <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="third-title" :class="{ 'fade-in': showThirdImageText }">
         How do youth promote<br>corporate behavior change?
@@ -104,16 +104,19 @@ onMounted(() => {
     </div>
 
     <!-- Fourth Image -->
-    <div class="image-container fourth-image">
+    <div class="agriculture-image-container fourth-image">
       <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
-      <div class="fourth-title first" :class="{ 'fade-in': showFourthImageText }">
+      <div class="agriculture-fourth-title first" :class="{ 'fade-in': showFourthImageText }">
         Food and Agriculture, China
       </div>
-      <div class="fourth-title second" :class="{ 'fade-in': showFourthImageText }">
+      <div class="agriculture-fourth-title second" :class="{ 'fade-in': showFourthImageText }">
         <a href="https://example.com/2013" target="_blank">2013 ←</a>
       </div>
-      <div class="fourth-title third" :class="{ 'fade-in': showFourthImageText }">
+      <div class="agriculture-fourth-title third" :class="{ 'fade-in': showFourthImageText }">
         <a href="https://example.com/2014" target="_blank">2014 ←</a>
+      </div>
+      <div class="agriculture-fourth-title fourth" :class="{ 'fade-in': showFourthImageText }">
+        <router-link to="/comparison">Comparison between 2023 & 2024 ←</router-link>
       </div>
     </div>
   </div>
@@ -128,10 +131,10 @@ onMounted(() => {
 }
 
 /* Image container styling */
-.image-container {
+.agriculture-image-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   flex: 1;
   position: relative;
 }
@@ -188,10 +191,6 @@ onMounted(() => {
   opacity: 0;
 }
 
-.third-title {
-  line-height: 1.2;
-}
-
 /* Second and third image texts */
 .second-text,
 .third-text {
@@ -204,8 +203,7 @@ onMounted(() => {
   opacity: 0;
 }
 
-/* Fourth image titles */
-.fourth-title {
+.agriculture-fourth-title {
   position: absolute;
   font-size: 3rem;
   color: white;
@@ -214,24 +212,28 @@ onMounted(() => {
   transition: transform 0.3s ease, font-size 0.3s ease, opacity 1.5s ease-in-out; /* Fade-in effect */
 }
 
-.fourth-title.first {
-  top: 20%;
+.agriculture-fourth-title.first {
+  top: 17%;
 }
 
-.fourth-title.second {
-  top: 50%;
+.agriculture-fourth-title.second {
+  top: 39%;
 }
 
-.fourth-title.third {
-  top: 80%;
+.agriculture-fourth-title.third {
+  top: 61%;
 }
 
-.fourth-title a {
+.agriculture-fourth-title.fourth {
+  top: 83%;
+}
+
+.agriculture-fourth-title a {
   color: white;
   text-decoration: none;
 }
 
-.fourth-title a:hover {
+.agriculture-fourth-title a:hover {
   font-size: 3.5rem; /* Increase size on hover */
   transform: scale(1.1); /* Subtle grow effect */
 }
@@ -241,7 +243,7 @@ onMounted(() => {
 .fade-in.second-text,
 .fade-in.third-title,
 .fade-in.third-text,
-.fade-in.fourth-title {
+.fade-in.agriculture-fourth-title {
   opacity: 1;
 }
 </style>
