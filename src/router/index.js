@@ -2,6 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue'; 
 import DataView from '@/views/DataView.vue';
 import AlumView from '@/views/AlumView.vue';
+import AgricultureView from "@/views/AgricultureView.vue";
+import DigitalView from "@/views/DigitalView.vue";
+import FinancialView from "@/views/FinancialView.vue";
+import ComparisonView from "@/views/ComparisonView.vue";
+
 const routes = [
   {
     path: '/',        
@@ -18,6 +23,26 @@ const routes = [
     name: 'Alum',
     component: AlumView,
   },
+  {
+    path: '/agriculture',
+    name: 'Agriculture',
+    component: AgricultureView,
+  },
+  {
+    path: '/digital',
+    name: 'Digital',
+    component: DigitalView,
+  },
+  {
+    path: '/financial',
+    name: 'Financial',
+    component: FinancialView,
+  },
+  {
+    path: '/comparison',
+    name: 'Comparison',
+    component: ComparisonView,
+  }
 ];
 
 const router = createRouter({

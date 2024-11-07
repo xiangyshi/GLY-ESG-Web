@@ -30,79 +30,79 @@
     hoveredText.value = text;
   };
 
-  const setTitle = (text) => {
-    title.value = text;
-  }
+const setTitle = (text) => {
+  title.value = text;
+}
 
-  const titles = ref([
-    { text: 'About Our Partnership'},
-    { text: 'Meet Our Partnership'},
-    { text: 'Join Our Partnership'},
-  ])
+const titles = ref([
+  { text: 'About Our Partnership'},
+  { text: 'Meet Our Partnership'},
+  { text: 'Join Our Partnership'},
+])
 
-  const typeVisible = ref(false);
-  const hqVisible = ref(false);
+const typeVisible = ref(false);
+const hqVisible = ref(false);
 
-  const showTypeOptions = () => {
-    typeVisible.value = true;
-  };
+const showTypeOptions = () => {
+  typeVisible.value = true;
+};
 
-  const hideTypeOptions = () => {
-    typeVisible.value = false;
-  };
+const hideTypeOptions = () => {
+  typeVisible.value = false;
+};
 
-  const showHQOptions = () => {
-    hqVisible.value = true;
-  };
+const showHQOptions = () => {
+  hqVisible.value = true;
+};
 
-  const hideHQOptions = () => {
-    hqVisible.value = false;
-  };
+const hideHQOptions = () => {
+  hqVisible.value = false;
+};
 
-  const items = ref([
-    { name: 'Company A', type: 'Private', hq: 'China', website: 'www.companya.com' },
-    { name: 'Company B', type: 'NGO', hq: 'Hongkong China', website: 'www.companyb.com' },
-    { name: 'Company C', type: 'Academia', hq: 'USA', website: 'www.companyc.com' },
-  ]);
+const items = ref([
+  { name: 'Company A', type: 'Private', hq: 'China', website: 'www.companya.com' },
+  { name: 'Company B', type: 'NGO', hq: 'Hongkong China', website: 'www.companyb.com' },
+  { name: 'Company C', type: 'Academia', hq: 'USA', website: 'www.companyc.com' },
+]);
 
-  const typeOptions = ['All', 'Private', 'Academia', 'NGO', 'IGO'];
-  const hqOptions = ['All', 'China', 'Hongkong China'];
+const typeOptions = ['All', 'Private', 'Academia', 'NGO', 'IGO'];
+const hqOptions = ['All', 'China', 'Hongkong China'];
 
-  const selectedTypes = ref(['All']);
-  const selectedHQ = ref(['All']);
+const selectedTypes = ref(['All']);
+const selectedHQ = ref(['All']);
 
-  const filteredItems = computed(() => {
-    return items.value.filter(item => {
-      const typeMatch = selectedTypes.value.includes('All') || selectedTypes.value.includes(item.type);
-      const hqMatch = selectedHQ.value.includes('All') || selectedHQ.value.includes(item.hq);
-      return typeMatch && hqMatch;
-    });
+const filteredItems = computed(() => {
+  return items.value.filter(item => {
+    const typeMatch = selectedTypes.value.includes('All') || selectedTypes.value.includes(item.type);
+    const hqMatch = selectedHQ.value.includes('All') || selectedHQ.value.includes(item.hq);
+    return typeMatch && hqMatch;
   });
+});
 
-  const buttons = ref([
-    { text: 'Food and Agriculture', link: 'https://example.com' },
-    { text: 'Digital Inclusion', link: 'https://example.com' },
-    { text: 'Financial System', link: 'https://example.com' }
-  ]);
+const buttons = ref([
+  { text: 'Food and Agriculture', link: '/agriculture' },
+  { text: 'Digital Inclusion', link: '/digital' },
+  { text: 'Financial System', link: '/financial' }
+]);
 
-  const activeButton = ref(null);
-  const expandContent = ref(false);
+const activeButton = ref(null);
+const expandContent = ref(false);
 
-  const handleMouseEnter = (index) => {
-    activeButton.value = index;
-    expandContent.value = true;
-  };
+const handleMouseEnter = (index) => {
+  activeButton.value = index;
+  expandContent.value = true;
+};
 
-  const handleMouseLeave = (index) => {
-    if (activeButton.value === index) {
-      activeButton.value = null;
-      expandContent.value = false;
-    }
-  };
+const handleMouseLeave = (index) => {
+  if (activeButton.value === index) {
+    activeButton.value = null;
+    expandContent.value = false;
+  }
+}
 
-  const redirectTo = (url) => {
-    window.location.href = url;
-  };
+const redirectTo = (url) => {
+  window.location.href = url;
+};
 </script>
 
 <template>
@@ -110,7 +110,7 @@
     <Navbar />
     <!-- BEGIN GLOBE PAGE -->
     <div class="globe-background" style="flex: 1; position: relative;">
-      <img src="../assets/stars.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="globe-page">
         <!-- Globe Box-->
         <div class="flex-globe">
@@ -257,7 +257,7 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  height: calc(200vh + 122.5px);
 }
 
 /* Globe Page Styling */
