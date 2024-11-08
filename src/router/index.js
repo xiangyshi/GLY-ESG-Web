@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue'; 
 import DataView from '@/views/DataView.vue';
+import _2024View from '@/views/2024View.vue';
 const routes = [
   {
     path: '/',        
@@ -11,6 +12,10 @@ const routes = [
     path: '/data',
     name: "Data",
     component: DataView,
+  },
+  {
+    path: '/2024',
+    component: _2024View,
   }
 ];
 
