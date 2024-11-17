@@ -1,5 +1,5 @@
 <script setup>
-import Navbar from '../components/Navbar.vue';
+import Navbar from '../../../components/Navbar.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
 // Define reactive variables for the second, third, and fourth image text visibility
@@ -72,7 +72,7 @@ onMounted(() => {
 
     <!-- First Image -->
     <div class="image-container first-image">
-      <img src="../assets/Financial.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <img src="../../../assets/Financial.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="centered-text">
         Financial System
       </div>
@@ -83,7 +83,7 @@ onMounted(() => {
 
     <!-- Second Image -->
     <div class="image-container second-image">
-      <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <img src="../../../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="second-title" :class="{ 'fade-in': showSecondImageText }">
         Project Introduction
       </div>
@@ -94,7 +94,7 @@ onMounted(() => {
 
     <!-- Third Image -->
     <div class="image-container third-image">
-      <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <img src="../../../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="third-title" :class="{ 'fade-in': showThirdImageText }">
         How do youth promote<br>corporate behavior change?
       </div>
@@ -105,15 +105,15 @@ onMounted(() => {
 
     <!-- Fourth Image -->
     <div class="image-container fourth-image">
-      <img src="../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
+      <img src="../../../assets/Stars.jpg" style="width: 100%; height: 100%; position: absolute;">
       <div class="fourth-title first" :class="{ 'fade-in': showFourthImageText }">
         Financial System, China
       </div>
       <div class="fourth-title second" :class="{ 'fade-in': showFourthImageText }">
-        <a href="/financial/2023" target="_blank">2023 ←</a>
+        <a href="/financial2023" target="_blank">2023 ←</a>
       </div>
       <div class="fourth-title third" :class="{ 'fade-in': showFourthImageText }">
-        <a href="/financial/2024" target="_blank">2024 ←</a>
+        <a href="/financial2024" target="_blank">2024 ←</a>
       </div>
     </div>
   </div>

@@ -110,10 +110,10 @@ onMounted(() => {
         Digital Inclusion, China
       </div>
       <div class="fourth-title second" :class="{ 'fade-in': showFourthImageText }">
-        <a href="https://example.com/2013" target="_blank">2013 ←</a>
+        <a href="https://example.com/2023" target="_blank">2023 ←</a>
       </div>
       <div class="fourth-title third" :class="{ 'fade-in': showFourthImageText }">
-        <a href="https://example.com/2014" target="_blank">2014 ←</a>
+        <a href="https://example.com/2024" target="_blank">2024 ←</a>
       </div>
     </div>
   </div>
